@@ -1,0 +1,3 @@
+psutil==5.5.1
+GitPython==2.1.11
+typing==3.6.6
