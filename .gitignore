@@ -1,0 +1,12 @@
+# Compiled source #
+###################
+*.pyc
+.mypy_cache/*
+
+# IDE Settings #
+################
+.vscode/*
+
+# Config Files #
+################
+config.py
