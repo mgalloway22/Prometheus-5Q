@@ -35,7 +35,7 @@ class CPUAssistant(Assistant):
             for process in process_iter():
                 if self.process_name.lower() in process.name().lower():
                     cpu_pct: float = process.cpu_percent(interval=self.delay)
-                    if 0.0 < cpu_pct <= 50.0:
+                    if cpu_pct is None or  0.0 < cpu_pct <= 50.0:
                         return self.LOW
                     elif 50.0 < cpu_pct <= 100.0:
                         return self.MEDIUM
