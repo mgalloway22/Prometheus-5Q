@@ -39,8 +39,11 @@ class GitFetchAssistant(Assistant):
 
     def _set_current_number_away(self):
         active_branch: Head = self.repo.active_branch
+        tracking_branch = active_branch.tracking_branch()
+        if tracking_branch is None:
+            raise NoUpstreamError(self.name)
         behind_cmp: str = (active_branch.name + '..' +
-                           active_branch.tracking_branch().name)
+                           tracking_branch.name)
         amount_behind: int = sum(1 for c in self.repo.iter_commits(behind_cmp))
         ahead_cmp: str = (active_branch.tracking_branch().name + '..' +
                           active_branch.name)
@@ -119,3 +122,21 @@ class GitFetchError(AssistantError):
             print(self.name + ': The `git fetch` command failed, please ' +
                   'make sure that you are able to access the desired ' +
                   'repository')
+
+
+class NoUpstreamError(AssistantError):
+    """Raised when the the current branch does not have an upstream branch set
+
+    Attributes:
+        name (str): name of the assistant
+    """
+
+    def __init__(self, name: str):
+        AssistantError.__init__(self)
+        self.name: str = name
+
+    def elaborate(self):
+        if IS_DEBUG_MODE:
+            print(self.name + ': the active branch does not have a remote ' +
+                  'branch set - cannot deduce the amount of commits ahead ' +
+                  'or behind')
