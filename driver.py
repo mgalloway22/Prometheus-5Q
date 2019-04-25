@@ -53,24 +53,32 @@ def main():
     thier binding managed by the driver - once an assistant is added to that
     list, there is nothing more needed to orchestrate an additional assistant
     """
-
+    print("Igniting kindling...")
     all_assistants: List[Assistant] = init_assistants()
     for assistant in all_assistants:
         initiate_binding(Process(target=assistant.create_binding))
-
+    print("")
+    print(" (    (        )     *                     )           (                    ")
+    print(" )\ ) )\ )  ( /(   (  `          *   )  ( /(           )\ )     (  (    (   ")
+    print("(()/((()/(  )\())  )\))(   (   ` )  /(  )\()) (    (  (()/(     )\))( ( )\  ")
+    print(" /(_))/(_))((_)\  ((_)()\  )\   ( )(_))((_)\  )\   )\  /(_))__((_)()\ )((_) ")
+    print("(_)) (_))    ((_) (_()((_)((_) (_(_())  _((_)((_) ((_)(_)) |_|(()((_)((_)_  ")
+    print("| _ \| _ \ / _ \ |  \/  || __||_   _|| || || __|| | | |/ __|   | __| / _ \  ")
+    print("|  _/|   /| (_) || |\/| || _|   | |  | __ || _| | |_| |\__ \===|__ \| (_) | ")
+    print("|_|  |_|_\ \___/ |_|  |_||___|  |_|  |_||_||___| \___/ |___/   |___/ \__\_\ ")
+    print("")
     # infinte loop while the child processes run
     while 1:
         try:
-            key = input('Press Q + <ENTER> to kill the driver:\n')
+            key = input('Press Q + <ENTER> to extinguish:\n')
             if key == 'Q':
                 raise KeyboardInterrupt
-                return
+            else:
+                print('Unexpected Input')
         except KeyboardInterrupt:
-            print('Shutting down...')
+            print('Extinguishing...')
             kill_all_bindings()
             return
-        else:
-            print('Unexpected Input')
 
 
 if __name__ == '__main__':
