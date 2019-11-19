@@ -1,6 +1,6 @@
 # Prometheus-5Q
 
-Simple application to elegantly handle illuminating a [Das Keyboard 5Q](https://www.daskeyboard.io) via the available API in a configurable way. This project is intended to provide the user with a litteny of useful `Assistant`s that can be bound to Das Keyboard 5Q keys, but also make it effortless to create additional custom `Assistant`s that integrate seamlessly with `Assistant`s provided here.
+Simple application to elegantly handle illuminating a [Das Keyboard 5Q](https://www.daskeyboard.io) via the available API in a configurable way. This project is intended to provide the user with a set of useful `Assistant`s that can be bound to Das Keyboard 5Q keys, but also make it effortless to create additional custom `Assistant`s that integrate seamlessly with `Assistant`s provided here.
 
 ## Getting Started
 
