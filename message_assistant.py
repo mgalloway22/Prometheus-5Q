@@ -18,7 +18,7 @@ class Message:
 
 
 class MessageAssistant(Assistant):
-    """An assistant desgined to monitor the current state of a given vagrant VM
+    """An assistant desgined check for unread texts on the Apple Messages app
 
     This assistant is designed to filter all unread texts into desired groups
     depending on the sender and the groupchat name. Sender names and groupchat

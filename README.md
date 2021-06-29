@@ -12,7 +12,7 @@ You should probably own a [Das Keyboard 5Q](https://www.daskeyboard.io), but you
 
 This project requires Python 3.7+ along with the following libraries:
 
-* psutil (5.5.1)
+* psutil (5.6.6)
 * GitPython (2.1.11)
 * typing (3.6.6)
 
