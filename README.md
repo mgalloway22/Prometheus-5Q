@@ -10,11 +10,14 @@ To get started, all you need to do is clone the project and create a configurati
 
 You should probably own a [Das Keyboard 5Q](https://www.daskeyboard.io), but you don't necessarily need to. You can still use this without the keyboard as long as you have the free [Das Keyboard Dashboard](https://www.daskeyboard.io/get-started/software/) downloaded and running.
 
-This project requires Python 3.7+ along with the following libraries:
+This project requires Python 3.9.5+ along with the following libraries:
 
 * psutil (5.6.6)
-* GitPython (2.1.11)
+* GitPython (3.1.18)
 * typing (3.6.6)
+* requests (2.25.1)
+* python-dateutil (2.8.1)
+* jenkins (1.0.2)
 
 You can install these libraries by simply running `pip3 install -r requirements.txt` inside the project directory.
 
