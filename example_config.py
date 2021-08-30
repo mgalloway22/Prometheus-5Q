@@ -13,6 +13,21 @@ from yaml_assistant import YamlAssistant
 """Example Configuration class for the keyboard driver
 
 Here is where the variables that are fed to assistants are stored
+
+NOTE: can also point to a global config with the following code
+```
+from assistant import Assistant
+from typing import List
+import sys
+
+sys.path.append("/path/to/global_config/folder")
+
+from global_config import init_global_assistants
+
+
+def init_assistants() -> List[Assistant]:
+    return init_global_assistants()
+```
 """
 
 
